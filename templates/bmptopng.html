@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="./static/style.css" rel="stylesheet" />
+    <title>Convert BMP to PNG</title>
+  </head>
+  <body>
+    <header>
+      <h1>Convert BMP to PNG</h1>
+    </header>
+    <nav>
+      <a href="./">Home</a>
+    </nav>
+    <main>
+      <form>
+        <label for="file-input">Select BMP image:</label>
+        <input id="file-input" type="file" class="upload-input" accept=".bmp" />
+        <div id="errorMessage"></div>
+        <button id="convert-button">Convert to PNG</button>
+      </form>
+    </main>
+  </body>
+  <script type="text/javascript">
+    //get button object
+    const convertButton = document.getElementById("convert-button");
+    // Add an event listener for when the button is clicked
+    convertButton.addEventListener("click", async (e) => {
+      //clear error
+      clearError();
+      //get file object
+      const file = document.getElementById("file-input").files[0];
+      // 5 MB
+      const maxSize = 5 * 1024 * 1024;
+      if (!file) {
+        showError("Please select an image.");
+        return;
+      }
+      // Check file type
+      if (file.type !== "image/bmp") {
+        showError("Please Select a BMP file.");
+        return;
+      }
+      // Check if the selected file is less than 5MB
+      if (file.size > maxSize) {
+        showError("Please select a file below 5MB.");
+        return;
+      }
+
+      var formData = new FormData();
+      formData.append("image", file);
+      try {
+        const response = await fetch("/api/bmptopng", {
+          method: "POST",
+          body: formData,
+        });
+
+        if (!response.ok) {
+          throw new Error(response.statusText);
+        }
+        //conver to blob
+        const blob = await response.blob();
+        const a = document.createElement("a");
+        a.style.display = "none";
+        a.href = URL.createObjectURL(blob);
+        a.download = "converted-image.png";
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+      } catch (error) {
+        showError(`An error occurred: ${error.message}`);
+      }
+    });
+
+    /**
+     * clear message
+     */
+    function clearError() {
+      const errorMessage = document.getElementById("errorMessage");
+      errorMessage.style.display = "none";
+      errorMessage.innerHTML = "";
+    }
+
+    /**
+     * show message
+     * @param message
+     */
+    function showError(message) {
+      const errorMessage = document.getElementById("errorMessage");
+      errorMessage.style.display = "block";
+      errorMessage.innerHTML = message;
+    }
+  </script>
+</html>
