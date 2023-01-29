@@ -9,27 +9,27 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-# index.html
+# jpgtopng.html
 @app.route("/jpgtopng", methods=["GET"])
 def jpgtopng():
     return render_template("jpgtopng.html")
 
-# index.html
+# pngtojpg.html
 @app.route("/pngtojpg", methods=["GET"])
 def pngtojpg():
     return render_template("pngtojpg.html")
 
-# index.html
+# webptopng.html
 @app.route("/webptopng", methods=["GET"])
 def webptopng():
     return render_template("webptopng.html")
 
-# index.html
+# bmptopng.html
 @app.route("/bmptopng", methods=["GET"])
 def bmptopng():
     return render_template("bmptopng.html")
 
-# index.html
+# pngtopdf.html
 @app.route("/pngtopdf", methods=["GET"])
 def pngtopdf():
     return render_template("pngtopdf.html")
