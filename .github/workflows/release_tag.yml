@@ -8,6 +8,9 @@ jobs:
   build:
     name: Create Release
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.x]
     if: github.event.pull_request.merged == true
     steps:
       - name: Checkout code
