@@ -29,15 +29,9 @@ $ pip install -r requirements.txt
 # ✔ 作者について
 
 - [Blog](https://knowstechnic.blogspot.com)
-
 - [Github](https://github.com/RyuSeiri)
-
 - [Facebook](https://www.facebook.com/people/Ryu-Seiri/100087864783411)
-
 - [Twitter](https://twitter.com/Seiriryu)
-
 - [Qiita](https://qiita.com/Seiri)
-
 - [BiliBili](https://space.bilibili.com/140506788)
-
 - [YouTube](https://www.youtube.com/channel/UCph3vDUIHt68iR0vtHbChaw)
