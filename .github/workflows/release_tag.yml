@@ -8,13 +8,10 @@ jobs:
   build:
     name: Create Release
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14.x]
     if: github.event.pull_request.merged == true
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v2
       - name: Set current date
         id: current_date
         env:
