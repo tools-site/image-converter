@@ -2,7 +2,7 @@
 
 English | [日本語](./README_jp.md) | [简体中文](./README_zh.md)
 
-# ✔ About this project
+## ✔ About this project
 
 This is a project that uses Python to process images
 
@@ -23,7 +23,7 @@ $ pip install -r requirements.txt
 
 3. Finally, open the browser input console to display the output URL to access the website
 
-# ✔ About the author
+## ✔ About the author
 
 - [Blog](https://knowstechnic.blogspot.com)
 - [Github](https://github.com/RyuSeiri)
