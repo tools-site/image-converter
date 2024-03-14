@@ -25,13 +25,3 @@ $ pip install -r requirements.txt
 2.次に、`start.bat`をダブルクリックして python プログラムを実行します
 
 3.最後にブラウザ入力コンソールの表示出力の URL を開いてサイトにアクセスする
-
-## ✔ 作者について
-
-- [Blog](https://knowstechnic.blogspot.com)
-- [Github](https://github.com/RyuSeiri)
-- [Facebook](https://www.facebook.com/people/Ryu-Seiri/100087864783411)
-- [Twitter](https://twitter.com/Seiriryu)
-- [Qiita](https://qiita.com/Seiri)
-- [BiliBili](https://space.bilibili.com/140506788)
-- [YouTube](https://www.youtube.com/channel/UCph3vDUIHt68iR0vtHbChaw)
